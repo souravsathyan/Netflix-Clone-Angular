@@ -13,9 +13,11 @@ export class HomeComponent implements OnInit {
   ){}
 
   bannerResult:any =[]
+  trendingMovieResult:any=[]
 
   ngOnInit(): void {
     this.bannerData()
+    this.trendingMovieData()
   }
 
   //getting banner data
@@ -26,5 +28,10 @@ export class HomeComponent implements OnInit {
     })
   }
   // trending movies data
-  
+  trendingMovieData(){
+    this.movieService.trendingMovieApiData()
+    .subscribe((result)=>{
+      this.trendingMovieResult = result.results
+    })
+  }
 }
