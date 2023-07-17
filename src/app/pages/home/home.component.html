@@ -5,7 +5,11 @@
           <div class="carousel-item" data-bs-interval="10000"
            *ngFor="let b of bannerResult; let i = index"
             [ngClass]="{active:i===1}">
-            <img src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}" class="d-block w-100" alt="...">
+            <img 
+            src="https://image.tmdb.org/t/p/original/{{b.backdrop_path}}" 
+            class="bannerImage d-block w-100" alt="..." 
+            [routerLink]="['/movie',b.id]"
+            >
             <div class="carousel-caption d-none d-md-block">
                 <h2>{{b.original_title}}</h2>
                 <p>{{b.overview}}</p>
@@ -24,16 +28,103 @@
 </div>
 <!-- banner ends -->
 
+<!-- trending movies -->
 <div class="contain mt-3 p-4">
-    <!-- trending movies -->
     <div class="row">
         <h5 class="text-white">Trending Movies</h5>
         <div class="row-poster mt-3 p-2">
             <ng-container  *ngFor="let t of trendingMovieResult">
                 <img src="https://image.tmdb.org/t/p/original/{{t.poster_path}}"
-                 class="rowimg largePoster" alt="...">
+                 class="rowimg largePoster" alt="..."
+                 [routerLink]="['/movie',t.id]">
             </ng-container>
 
         </div>
     </div>
+</div>
+
+<!-- action movies -->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">Action Movies</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let a of actionMovies">
+              <img src="https://image.tmdb.org/t/p/original/{{a.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',a.id]">
+          </ng-container>
+
+      </div>
+  </div>
+</div>
+
+<!-- adventure movies -->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">Action Movies</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let a of adventureMovies">
+              <img src="https://image.tmdb.org/t/p/original/{{a.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',a.id]">
+          </ng-container>
+
+      </div>
+  </div>
+</div>
+<!-- animation movies-->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">Animation Movies</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let a of animationMovies">
+              <img src="https://image.tmdb.org/t/p/original/{{a.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',a.id]">
+          </ng-container>
+
+      </div>
+  </div>
+</div>
+<!-- sci-fi movies -->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">SC-Fi Movies</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let s of sciFiMovies">
+              <img src="https://image.tmdb.org/t/p/original/{{s.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',s.id]">
+          </ng-container>
+
+      </div>
+  </div>
+</div>
+<!-- documentries -->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">Documentries</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let d of documentries">
+              <img src="https://image.tmdb.org/t/p/original/{{d.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',d.id]">
+          </ng-container>
+
+      </div>
+  </div>
+</div>
+<!-- comedymovies -->
+<div class="contain mt-3 p-4">
+  <div class="row">
+      <h5 class="text-white">Comedy Movies</h5>
+      <div class="row-poster mt-3 p-2">
+          <ng-container  *ngFor="let c of comedyMovies">
+              <img src="https://image.tmdb.org/t/p/original/{{c.poster_path}}"
+               class="rowimg largePoster" alt="..."
+               [routerLink]="['/movie',c.id]">
+          </ng-container>
+
+      </div>
+  </div>
 </div>

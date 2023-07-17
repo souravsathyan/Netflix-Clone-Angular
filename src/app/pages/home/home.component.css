@@ -51,3 +51,7 @@
 {
     display: none;
 }
+.bannerImage
+{
+    cursor: pointer;
+}
